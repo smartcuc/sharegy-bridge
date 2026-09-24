@@ -1,1 +1,8 @@
-{\n  "version": "2.2.0",\n  "name": "sharegy-bridge",\n  "build": 220,\n  "released_at": "2026-09-24",\n  "release_notes": "Stabiler Heartbeat, Sharegy-Bridge Naming & 1-Klick Cloud OTA",\n  "binary_url": "https://raw.githubusercontent.com/smartcuc/sharegy-bridge/main/sharegy_bridge_latest.bin"\n}
+{
+  "version": "2.2.0",
+  "name": "sharegy-bridge",
+  "build": 220,
+  "released_at": "2026-09-24",
+  "release_notes": "Stabiler Heartbeat, Sharegy-Bridge Naming & 1-Klick Cloud OTA",
+  "binary_url": "https://raw.githubusercontent.com/smartcuc/sharegy-bridge/main/sharegy_bridge_latest.bin"
+}
