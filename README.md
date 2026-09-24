@@ -1,74 +1,39 @@
-﻿# ⚡ Sharegy Hardware Bridge – Firmware & Update-Center
+# ? Sharegy Hardware Bridge - Firmware & Update-Center
 
-Offizielles Firmware-Repository für die **Sharegy DIN-Rail Hardware Bridge** (Hutschienen-Gateway für SG-Ready, § 14a EnWG Steuerboxen, RS485 Modbus und CAN-Bus).
+Offizielles Firmware-Release-Repository f�r die **Sharegy DIN-Rail Hardware Bridge** (Hutschienen-Gateway f�r SG-Ready, � 14a EnWG Steuerboxen, RS485 Modbus und CAN-Bus).
 
 * **Ziel-Hardware:** Waveshare ESP32-S3 Industrial PoE 8DI / 8RO Controller
-* **Aktuelle Version:** 1.0.0 (Stable)
-* **Download:** 👉 [**sharegy_bridge_latest.bin**](./sharegy_bridge_latest.bin) *(Rechtsklick -> Ziel speichern unter...)*
+* **Aktuelle Version:** 2.2.0 (Stable)
+* **Download:** ?? [**sharegy_bridge_latest.bin**](./sharegy_bridge_latest.bin)
+* **Komplettflash (0x0):** ?? [**merged_firmware.bin**](./merged_firmware.bin)
 
 ---
 
-## 🚀 Firmware aktualisieren (Schritt-für-Schritt)
+## ? 1-Klick Cloud-Update (Standard)
 
-Du kannst das Update ganz einfach über den Webbrowser auf deinem Smartphone, Tablet oder PC durchführen:
+Ab Firmware 2.2.0 ist das **1-Klick Cloud-Update** der Standard:
 
-### Variante 1: Über die lokale Weboberfläche (Empfohlen)
-
-1. **Firmware herunterladen:**  
-   Lade die Datei [sharegy_bridge_latest.bin](./sharegy_bridge_latest.bin) auf deinen Computer oder dein Smartphone herunter.
-
-2. **Gerät im Browser aufrufen:**  
-   * Wenn das Gerät im Heimnetzwerk/WLAN ist: Öffne im Browser **http://sharegy-bridge.local** (oder die lokale IP-Adresse der Bridge).
-   * Wenn das Gerät im Einrichtungsmodus ist: Verbinde dich mit dem WLAN Sharegy-WS-ESP32S3-... (Passwort: sharegy!26B) und öffne **http://192.168.4.1**.
-
-3. **Update-Menü öffnen:**  
-   * Scrolle nach unten zum Bereich **"Firmware Update (OTA)"** oder klicke im Menü auf **"Update"**.
-
-4. **Datei auswählen & Starten:**  
-   * Wähle die heruntergeladene Datei sharegy_bridge_latest.bin aus.
-   * Klicke auf **"Update starten"**.
-
-5. **Fertig:**  
-   * Der Ladebalken läuft durch (ca. 5–10 Sekunden).
-   * Die Bridge startet automatisch neu und meldet sich mit der neuen Firmware-Version an!
+1. �ffne die Web-UI deiner Bridge (**http://sharegy-bridge.local** oder lokale IP).
+2. Die Bridge erkennt neue Versionen automatisch.
+3. Klicke einfach auf **"? 1-Klick Update"** � die Firmware wird geladen, geflasht und die Bridge startet neu.
 
 ---
 
-### Variante 2: Automatisches Cloud-Update via Moniy
+## ?? Manuelles Update via Web-Upload (Option)
 
-Wenn deine Bridge mit dem Internet verbunden ist, werden neue Firmware-Versionen in der Regel **automatisch und unterbrechungsfrei** über das zentrale smartEvo/Moniy Flotten-Management eingespielt. Du musst in diesem Fall nichts manuell tun.
-
----
-
-### Variante 3: Erstinstallation über USB (Für neue oder zurückgesetzte Geräte)
-
-Falls ein fabrikneues Waveshare-Gerät erstmalig geflasht werden muss:
-
-1. Verbinde die Bridge über ein USB-C Datenkabel mit deinem PC.
-2. Führe folgenden Befehl im Terminal aus (Python + esptool erforderlich):
-
-`ash
-python -m esptool --chip esp32s3 --port COM3 --baud 921600 write_flash 0x0 merged_firmware.bin
-`
-*(Ersetze COM3 durch den tatsächlichen COM-Port deines Geräts).*
+1. Lade [**sharegy_bridge_latest.bin**](./sharegy_bridge_latest.bin) oder [**sharegy_bridge_v2.2.0.bin**](./sharegy_bridge_v2.2.0.bin) herunter.
+2. �ffne die Web-UI der Bridge.
+3. Klappe den Bereich *"?? Manuelles Datei-Upload (.bin) als Option"* auf, w�hle die Datei und klicke auf Hochladen.
 
 ---
 
-## 📋 Funktionsübersicht & Relais-Belegung
+## ?? Versions-Historie (Changelog)
 
-* **RO 1 / RO 2:** SG-Ready Wärmepumpen-Kontakte (Zustände 1 bis 4: Sperre, Normal, PV-Empfehlung, Maximallast)
-* **RO 3:** Wallbox Freigabekontakt / Ladesteuerung
-* **RO 4 – RO 6:** 3-stufiger Heizstab für PV-Überschuss
-* **DI 1 – DI 4:** § 14a EnWG VNB Steuerbox-Signale (100% / 60% / 30% / 0% Dimmung)
-* **RS485:** Modbus RTU für Stromzähler (Eastron SDM630 / Sungrow / Janitza)
-* **CAN-Bus:** 500 kBit/s Batterie-Telemetrie (Pylontech / BYD)
-
----
-
-## 📦 Versions-Historie (Changelog)
+### Version 2.2.0 (2026-09-24)
+* **1-Klick Cloud OTA:** Automatische Erkennung neuer Releases via `version.json` und 1-Klick Flash per HTTPS direkt aus der Web-UI.
+* **Moniy Flotten-Integration:** Robuster Application-Level Heartbeat ohne Disconnect-Flapping.
+* **Standardisierung:** Naming auf `sharegy-bridge` harmonisiert.
 
 ### Version 1.0.0 (2026-09-24)
-* Initiales Release der Industrie-Firmware für Waveshare ESP32-S3 Industrial PoE 8DI/8RO.
-* Vollständige § 14a EnWG Auswertung mit prioritärem Hardware-Override (< 50ms Reaktionszeit).
-* Lokales Web-Dashboard zur Konfiguration, Signal-Überwachung und für lokale Web-Updates.
-* Remote-OTA Unterstützung für vollautomatische Updates aus dem Moniy Management.
+* Initiales Release mit � 14a EnWG, 8x RO, 8x DI, SG-Ready Matrix und manuellem Web-Upload.
+
