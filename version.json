@@ -1,8 +1,8 @@
 {
-  "version": "2.4.0",
+  "version": "2.4.1",
   "min_version": "1.0.0",
   "hardware": "Sharegy-Bridge-8DI-8RO",
   "firmware_url": "https://raw.githubusercontent.com/smartcuc/sharegy-bridge/main/sharegy_bridge_latest.bin",
-  "release_notes": "v2.4.0: Live-Bus-Monitor & Sniffer, Modbus-TCP/SML Parser, 72h RAM TAF-7 Puffer (0% Flash-Verschleiss) & Backup-Export/Restore (Monteur JSON + WSS Cloud Snapshot).",
-  "timestamp": "2026-10-02T04:46:00Z"
+  "release_notes": "v2.4.1: Fix Web-UI Streaming ueber PROGMEM Flash (send_P) zur Vermeidung von Heap-Allokation bei grosser HTML-UI.",
+  "timestamp": "2026-10-02T04:53:00Z"
 }
