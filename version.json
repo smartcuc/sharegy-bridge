@@ -1,1 +1,8 @@
-﻿{\n  "version": "2.3.0",\n  "name": "sharegy-bridge",\n  "build": 230,\n  "released_at": "2026-10-02",\n  "release_notes": "v2.3.0: Bluetooth ab Werk deaktiviert, Statische IP Konfiguration, 2-stufiger Modbus/Schnittstellen-Selektor (RTU/TCP/USB-C SML IR), Kostal & SML Smart Meter IR Unterstützung, Sungrow Multi-Channel Telemetrie.",\n  "binary_url": "https://raw.githubusercontent.com/smartcuc/sharegy-bridge/main/sharegy_bridge_latest.bin"\n}\n
+{
+  "version": "2.3.0",
+  "name": "sharegy-bridge",
+  "build": 230,
+  "released_at": "2026-10-02",
+  "release_notes": "v2.3.0: Bluetooth ab Werk deaktiviert, Statische IP Konfiguration, 2-stufiger Modbus/Schnittstellen-Selektor (RTU/TCP/USB-C SML IR), Kostal & SML Smart Meter IR Unterstuetzung, Sungrow Multi-Channel Telemetrie.",
+  "binary_url": "https://raw.githubusercontent.com/smartcuc/sharegy-bridge/main/sharegy_bridge_latest.bin"
+}
