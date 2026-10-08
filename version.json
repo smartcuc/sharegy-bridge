@@ -1,8 +1,8 @@
 {
-  "version": "2.5.0",
+  "version": "2.6.0",
   "min_version": "1.0.0",
   "hardware": "Sharegy-Bridge-8DI-8RO",
   "firmware_url": "https://raw.githubusercontent.com/smartcuc/sharegy-bridge/main/sharegy_bridge_latest.bin",
-  "release_notes": "v2.5.0: Sniffer Start/Pause/Clear, Hardware-Ressourcen-Anzeige (RAM, Flash, CPU, Uptime) und Sofort-NTP-Zeitsynchronisation per Klick.",
-  "timestamp": "2026-10-02T05:18:00Z"
+  "release_notes": "v2.6.0: EEBUS SHIP/SPINE Handshake & Pairing, § 14a EnWG Drosselung (LPC 4,2 kW / LPP 30% / 0% Not-Abschaltung), Virtual Steuerbox WAN Carrier Bridge, 60s FailSafe-Watchdog und erweiterte RPC-Steuerung.",
+  "timestamp": "2026-10-08T21:50:00Z"
 }
