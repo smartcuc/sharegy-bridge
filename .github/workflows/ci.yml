@@ -1,0 +1,36 @@
+name: ⚡ Sharegy Bridge Firmware CI & Release Validation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  validate-release:
+    name: 🛡️ Validate Firmware Binaries & OTA Schema
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Check out repository
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 🧪 Execute Release & Binary Test Suite
+        run: node test/test_firmware_release.js
+
+      - name: 📋 Check JSON Manifest Formatting
+        run: |
+          jq . version.json > /dev/null || (echo "❌ version.json ist kein gültiges JSON" && exit 1)
+          echo "✔ version.json ist syntaktisch korrekt"
+
+      - name: 📊 Binary Checksum Report
+        run: |
+          echo "=========================================="
+          echo "FIRMWARE RELEASE HASH REPORT:"
+          sha256sum firmware.bin sharegy_bridge_latest.bin
+          echo "=========================================="
