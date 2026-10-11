@@ -2,6 +2,7 @@
   "version": "2.6.0",
   "min_version": "1.0.0",
   "hardware": "Sharegy-Bridge-8DI-8RO",
+  "binary_url": "https://raw.githubusercontent.com/smartcuc/sharegy-bridge/main/sharegy_bridge_latest.bin",
   "firmware_url": "https://raw.githubusercontent.com/smartcuc/sharegy-bridge/main/sharegy_bridge_latest.bin",
   "release_notes": "v2.6.0: Dauerhafter interner Geräte-AP Modus ohne Timeout-Abschaltung, Installateur-Inbetriebnahmebestätigung, EEBUS SHIP/SPINE Handshake, § 14a EnWG Drosselung, WAN Carrier Bridge & 60s FailSafe-Watchdog.",
   "timestamp": "2026-10-11T01:30:00Z"
