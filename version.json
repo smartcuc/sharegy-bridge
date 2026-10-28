@@ -1,9 +1,9 @@
 {
-  "version": "2.6.2",
+  "version": "2.7.0",
   "min_version": "1.0.0",
   "hardware": "Sharegy-Bridge-8DI-8RO",
   "binary_url": "https://raw.githubusercontent.com/smartcuc/sharegy-bridge/main/sharegy_bridge_latest.bin",
   "firmware_url": "https://raw.githubusercontent.com/smartcuc/sharegy-bridge/main/sharegy_bridge_latest.bin",
-  "release_notes": "v2.6.2: Dual-Socket WSS Carrier FQDN auf mon.sharegy.de aktualisiert, Handshake-Token-Bindung & Reverse-RPC Fleet Observability.",
-  "timestamp": "2026-10-17T00:30:00Z"
+  "release_notes": "v2.7.0: Konfigurierbare Impulszähler & Schaltkontakte (DI 5–8) mit Messmedium (Strom Bezug/PV, Wasser, Gas, Wärme), Einheit (kWh, m³, L), Impulswertigkeit, Live-Leistung/Durchfluss, Zählerstand-Abgleich und NVS-Persistenz.",
+  "timestamp": "2026-10-28T20:00:00Z"
 }

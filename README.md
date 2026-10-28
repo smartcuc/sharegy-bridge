@@ -4,7 +4,7 @@
 ### *Industrial DIN-Rail Gateway & § 14a EnWG Controller*
 
 [![Hardware](https://img.shields.io/badge/Hardware-Waveshare_ESP32--S3-E7352C?style=for-the-badge&logo=espressif&logoColor=white)](https://www.waveshare.com/)
-[![Firmware](https://img.shields.io/badge/Version-v2.5.0_(Stable)-007ACC?style=for-the-badge&logo=cplusplus&logoColor=white)](version.json)
+[![Firmware](https://img.shields.io/badge/Version-v2.7.0_(Stable)-007ACC?style=for-the-badge&logo=cplusplus&logoColor=white)](version.json)
 [![OTA](https://img.shields.io/badge/OTA-1--Klick_Cloud_Update-success?style=for-the-badge&logo=github&logoColor=white)](#-1-klick-cloud-ota-standard)
 [![PoE](https://img.shields.io/badge/Ethernet-PoE_W5500_Industrial-blue?style=for-the-badge)](https://www.waveshare.com/)
 
@@ -31,7 +31,7 @@
 
 | Datei | Beschreibung | Typ | Link |
 | :--- | :--- | :--- | :--- |
-| **`sharegy_bridge_latest.bin`** | Aktuelle OTA-Firmware (v2.5.0) | App-Partition | [📥 Download](./sharegy_bridge_latest.bin) |
+| **`sharegy_bridge_latest.bin`** | Aktuelle OTA-Firmware (v2.7.0) | App-Partition | [📥 Download](./sharegy_bridge_latest.bin) |
 | **`merged_firmware.bin`** | Komplettes Factory-Image inkl. Bootloader & Partition-Table | Full Flash (`0x0`) | [📥 Download](./merged_firmware.bin) |
 | **`version.json`** | Aktuelle Release-Metadaten für Cloud OTA | JSON Manifest | [📄 Ansehen](./version.json) |
 
@@ -108,6 +108,11 @@ esptool.py --chip esp32s3 -p /dev/ttyACM0 -b 921600 --before default_reset --aft
 ---
 
 ## 📝 Versions-Historie (Changelog)
+
+### Version 2.7.0 (2026-10-28)
+* ⚡ **Konfigurierbare Impulszähler & Zusatzeingänge (DI 5–8):** Freie Umschaltung pro Kanal zwischen **S0-/Impulszähler** und **Schalt-/Statuskontakt (NO/NC)** direkt im Web-Dashboard und per JSON-RPC (`di.set_config`).
+* 📊 **Messmedium, Einheit & Impulswertigkeit:** Auswahl von **Strom (Bezug / PV)**, **Wasser**, **Gas** oder **Wärme/Kälte**, Einheit (`kWh`, `m³`, `L`), frei definierbarer Zählerkonstante (z. B. `1000 Imp./kWh`, `100 Imp./m³`) und Entprellzeit (`5–2000 ms`).
+* 📈 **Live-Leistung & Durchfluss + Zählerstand-Abgleich:** Echtzeit-Berechnung von Leistung (`W` / `kW`) bzw. Durchfluss (`L/min`) aus dem Impuls-Zeitabstand $\Delta t$, Abgleich mit dem abgelesenen physischen Zählerstand (`base_offset`) und ausfallsichere NVS-Persistenz.
 
 ### Version 2.5.0 (2026-10-02)
 * 🔍 **Modbus Sniffer Suite:** Start, Pause, Clear und Live-Hex-Dump im Web-Dashboard.
